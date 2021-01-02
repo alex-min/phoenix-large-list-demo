@@ -1,0 +1,83 @@
+.fattable-h-scrollbar {
+  display: none;
+}
+
+  .fattable-v-scrollbar {
+    padding: 0;
+    position: absolute;
+    background-color: transparent;
+    width: auto;
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
+  .fattable-v-scrollbar > div {
+    padding: 0 !important;
+  }
+  
+  .fattable {
+    overflow: hidden;
+  }
+  .fattable ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  .fattable ::-webkit-scrollbar-track {
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    background: rgba(0, 0, 0, 0.1);
+  }
+  .fattable ::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    background: rgba(0, 0, 0, 0.2);
+  }
+  .fattable ::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.4);
+  }
+  .fattable ::-webkit-scrollbar-thumb:window-inactive {
+    background: rgba(0, 0, 0, 0.05);
+  }
+  .fattable-moving {
+    cursor: move;
+  }
+  .fattable-viewport {
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+  }
+  .fattable-viewport > div {
+    position: absolute;
+    overflow: hidden;
+  }
+  
+  .fattable-body-container {
+    position: absolute;
+    overflow: hidden;  
+    bottom: 0px;
+    width: 100%;
+  }
+  
+  .fattable-header-container {
+    display: none;
+  }
+  
+  .fattable-header-container .fattable-viewport {
+    height: 100%;
+  }
+  .fattable-header-container .fattable-viewport > div {
+    height: 100%;
+  }
+  
+  .fattable-header-container {
+    background-color: #5B799E;
+    border-bottom: solid 5px rgba(0, 0, 0, 0.4);
+    text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.4);
+    color: #eee;
+  }
+  

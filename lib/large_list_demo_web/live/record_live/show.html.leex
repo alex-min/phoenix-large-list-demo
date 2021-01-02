@@ -1,0 +1,27 @@
+<h1>Show Record</h1>
+
+<%= if @live_action in [:edit] do %>
+  <%= live_modal @socket, LargeListDemoWeb.RecordLive.FormComponent,
+    id: @record.id,
+    title: @page_title,
+    action: @live_action,
+    record: @record,
+    return_to: Routes.record_show_path(@socket, :show, @record) %>
+<% end %>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @record.name %>
+  </li>
+
+  <li>
+    <strong>Value:</strong>
+    <%= @record.value %>
+  </li>
+
+</ul>
+
+<span><%= live_patch "Edit", to: Routes.record_show_path(@socket, :edit, @record), class: "button" %></span>
+<span><%= live_redirect "Back", to: Routes.record_index_path(@socket, :index) %></span>

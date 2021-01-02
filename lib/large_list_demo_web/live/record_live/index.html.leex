@@ -1,0 +1,33 @@
+<h1>Listing Records</h1>
+
+<%= if @live_action in [:new, :edit] do %>
+  <%= live_modal @socket, LargeListDemoWeb.RecordLive.FormComponent,
+    id: @record.id || :new,
+    title: @page_title,
+    action: @live_action,
+    record: @record,
+    return_to: Routes.record_index_path(@socket, :index) %>
+<% end %>
+
+<div>
+  <div id="records"
+         phx-hook="InfiniteScroll"
+         data-count="<%= @records_count %>"
+         data-page-size="<%= @records_per_page %>"
+         data-row-height="<%= @row_height %>"
+         data-loading-block-id="loading-block"
+      >
+    <%= for record <- @records do %>
+      <%= render(LargeListDemoWeb.LayoutView, "record.html",
+               conn: @socket,
+               record: record) %>
+    <% end %>
+  </div>
+</div>
+<div id="loading-block" style="display: none" aria-hidden="true">
+  <div class="record">
+    Loading...
+  </div>
+</div>
+
+<span><%= live_patch "New Record", to: Routes.record_index_path(@socket, :new) %></span>

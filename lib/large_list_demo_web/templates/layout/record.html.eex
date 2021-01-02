@@ -1,0 +1,4 @@
+<div id="record-<%= @record.id %>" class="record">
+    <span><b><%= @record.name %></b></span>
+    <span class="value">Value: <%= @record.value %></span>
+</div>
